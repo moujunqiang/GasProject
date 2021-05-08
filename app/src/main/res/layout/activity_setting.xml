@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+   >
+
+    <com.hjq.bar.TitleBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        app:leftIcon="@mipmap/bar_icon_back_white"
+        app:title="设置"
+        app:titleColor="@color/white" />
+
+    <com.android.gasproject.view.SettingBar
+        android:id="@+id/sb_setting_cache"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:bar_leftText="清空缓存"
+        app:bar_rightIcon="@mipmap/right_arrow" />
+
+    <com.android.gasproject.view.SettingBar
+        android:id="@+id/sb_setting_version"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:bar_leftText="当前版本"
+        app:bar_rightHint="V1.0.0"
+        app:bar_rightIcon="@mipmap/right_arrow" />
+
+    <com.android.gasproject.view.SettingBar
+        android:id="@+id/sb_setting_exit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:bar_leftColor="@android:color/holo_red_dark"
+        app:bar_leftText="退出登陆" />
+
+</LinearLayout>

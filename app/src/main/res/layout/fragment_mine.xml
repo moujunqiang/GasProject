@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/me_ic_bg_top">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/me_cl_head"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:background="@drawable/bg_me_top_withe"
+            android:padding="15dp">
+
+            <ImageView
+                android:id="@+id/me_iv_head"
+                android:layout_width="@dimen/widget_size_68"
+                android:layout_height="@dimen/widget_size_68"
+                android:src="@mipmap/logo"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+
+                android:id="@+id/me_tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:textColor="@color/black85"
+                android:textSize="@dimen/font_size_18"
+                app:layout_constraintStart_toEndOf="@+id/me_iv_head"
+                app:layout_constraintTop_toTopOf="@+id/me_iv_head" />
+
+            <TextView
+                android:id="@+id/me_tv_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/black45"
+                android:textSize="@dimen/font_size_15"
+                app:layout_constraintStart_toStartOf="@+id/me_tv_name"
+                app:layout_constraintTop_toBottomOf="@+id/me_tv_name"
+                tools:text="186****5678" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="53dp"
+            android:layout_marginBottom="17dp"
+            android:text="我的"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <com.android.gasproject.view.SettingBar
+            android:id="@+id/sb_person_web"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:bar_leftText="查看网页"
+            app:bar_rightIcon="@mipmap/right_arrow" />
+
+
+        <com.android.gasproject.view.SettingBar
+            android:id="@+id/sb_person_repair"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:bar_leftText="我的报修单"
+            app:bar_rightIcon="@mipmap/right_arrow" />
+
+        <com.android.gasproject.view.SettingBar
+            android:id="@+id/sb_mine_setting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:bar_leftText="设置"
+            app:bar_rightIcon="@mipmap/right_arrow" />
+    </LinearLayout>
+
+
+</LinearLayout>
