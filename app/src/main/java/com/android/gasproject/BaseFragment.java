@@ -3,8 +3,6 @@ package com.android.gasproject;
 import androidx.fragment.app.Fragment;
 
 import com.android.gasproject.utils.SPUtils;
-import com.example.uploadtem.http.response.StudentInfoBean;
-import com.example.uploadtem.utils.SPUtils;
 import com.hjq.http.listener.OnHttpListener;
 import com.wega.library.loadingDialog.LoadingDialog;
 
@@ -32,11 +30,6 @@ public class BaseFragment extends Fragment implements OnHttpListener {
      */
     public void hideLodingDialog() {
         loadingDialog.cancel();
-    }
-
-    public StudentInfoBean getStudentInfo() {
-        StudentInfoBean student = SPUtils.getObject("student", StudentInfoBean.class, getContext());
-        return student;
     }
 
 

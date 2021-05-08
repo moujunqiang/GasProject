@@ -26,7 +26,6 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
 
 
     private View inflate;
-    private TextView tvTem, tvHum,tvNongdu;
     private Banner banner;
 
     public static HomeFragment newInstance() {
@@ -45,14 +44,6 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
 
     private void initView() {
         banner = inflate.findViewById(R.id.banner);
-
-        inflate.findViewById(R.id.ll_home_notice).setOnClickListener(this);
-        inflate.findViewById(R.id.ll_home_repair).setOnClickListener(this);
-        tvTem = inflate.findViewById(R.id.tv_current_tem);
-        tvHum = inflate.findViewById(R.id.tv_current_hum);
-        tvNongdu = inflate.findViewById(R.id.tv_current_nongdu);
-
-        getRoomTemAndHum();
         initBanner();
     }
     /**
@@ -75,46 +66,11 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.ll_home_repair:
-                startActivity(new Intent(getContext(), RepairActivity.class));
+            case R.id.ll_history:
                 break;
-            case R.id.ll_home_notice:
-                startActivity(new Intent(getContext(), StayOutLateActivity.class));
-                break;
+
         }
     }
 
-    /**
-     * 获取宿舍温湿度
-     */
-    public void getRoomTemAndHum() {
-        StudentInfoBean studentInfo = getStudentInfo();
-        EasyHttp.get(this)
-                .api(new RegisterStudentApi()
-                        .setPath("dormitory_getdata")
-                        .setData("{\"dorm_id\":\"" + studentInfo.getFields().getStu_dormitory() + "\"}")
-                        .setType("1"))
-                .request(new HttpCallback<HttpData<List<DormitoryRoomBean>>>(this) {
 
-
-                    @Override
-                    public void onSucceed(HttpData<List<DormitoryRoomBean>> data) {
-                        if (data.getData() != null && data.getData().size() > 0) {
-                            DormitoryRoomBean dormitoryRoomBean = data.getData().get(0);
-                            if (dormitoryRoomBean != null) {
-                                tvTem.setText(dormitoryRoomBean.getFields().getDorm_tmp() + "℃");
-                                tvHum.setText(dormitoryRoomBean.getFields().getDorm_hum() * 100 + "%");
-                                tvNongdu.setText(dormitoryRoomBean.getFields().getDorm_smog() + "");
-
-                            }
-                        }
-
-                    }
-
-                    @Override
-                    public void onFail(Exception e) {
-                        super.onFail(e);
-                    }
-                });
-    }
 }

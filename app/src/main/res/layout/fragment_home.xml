@@ -108,18 +108,20 @@
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 
-                <View style="@style/HorizontalLineStyle" />
+                <View
+                    style="@style/HorizontalLineStyle"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp" />
 
                 <LinearLayout
-                    android:layout_marginBottom="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="10dp"
-                    android:paddingTop="10dp">
+                    android:layout_marginLeft="10dp">
 
                     <View style="@style/VerticalLineStyle" />
 
                     <LinearLayout
+
                         android:id="@+id/ll_invest"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -129,13 +131,16 @@
 
                         <ImageView
                             android:layout_width="wrap_content"
+
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
                             android:src="@mipmap/iv_invest" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:text="充值缴费"
                             android:textColor="@color/black75" />
                     </LinearLayout>
@@ -152,7 +157,9 @@
 
                         <ImageView
                             android:layout_width="wrap_content"
+
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
                             android:src="@mipmap/iv_yue" />
 
                         <TextView
@@ -175,7 +182,9 @@
 
                         <ImageView
                             android:layout_width="wrap_content"
+
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
                             android:src="@mipmap/iv_trim" />
 
                         <TextView
@@ -185,7 +194,10 @@
                             android:text="我要报装"
                             android:textColor="@color/black75" />
                     </LinearLayout>
-                    <View style="@style/VerticalLineStyle" android:layout_marginRight="10dp" />
+
+                    <View
+                        style="@style/VerticalLineStyle"
+                        android:layout_marginRight="10dp" />
 
                 </LinearLayout>
 
@@ -200,6 +212,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginRight="15dp"
                 android:background="@drawable/bg_me_top_withe"
                 android:orientation="vertical"
@@ -217,14 +230,15 @@
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 
-                <View style="@style/HorizontalLineStyle" />
+                <View
+                    style="@style/HorizontalLineStyle"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp" />
 
                 <LinearLayout
-                    android:layout_marginBottom="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="10dp"
-                    android:paddingTop="10dp">
+                    android:layout_marginLeft="10dp">
 
                     <View style="@style/VerticalLineStyle" />
 
@@ -238,13 +252,16 @@
 
                         <ImageView
                             android:layout_width="wrap_content"
+
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
                             android:src="@mipmap/iv_money_history" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:text="气费账单"
                             android:textColor="@color/black75" />
                     </LinearLayout>
@@ -261,7 +278,9 @@
 
                         <ImageView
                             android:layout_width="wrap_content"
+
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
                             android:src="@mipmap/iv_history" />
 
                         <TextView
@@ -284,7 +303,9 @@
 
                         <ImageView
                             android:layout_width="wrap_content"
+
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
                             android:src="@mipmap/iv_notify_item" />
 
                         <TextView
@@ -294,7 +315,10 @@
                             android:text="通知公告"
                             android:textColor="@color/black75" />
                     </LinearLayout>
-                    <View style="@style/VerticalLineStyle" android:layout_marginRight="10dp" />
+
+                    <View
+                        style="@style/VerticalLineStyle"
+                        android:layout_marginRight="10dp" />
 
                 </LinearLayout>
 
@@ -304,8 +328,6 @@
                     android:layout_marginRight="10dp" />
 
             </LinearLayout>
-
-
 
 
         </LinearLayout>

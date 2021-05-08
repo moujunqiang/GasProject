@@ -11,12 +11,6 @@ import android.widget.Toast;
 
 import com.android.gasproject.BaseActivity;
 import com.android.gasproject.R;
-import com.example.myapplication.http.model.HttpData;
-import com.example.myapplication.http.request.ChangePwdApi;
-import com.example.myapplication.http.response.User;
-import com.example.myapplication.utils.SPUtils;
-import com.hjq.http.EasyHttp;
-import com.hjq.http.listener.HttpCallback;
 
 /**
  * 修改密码
@@ -66,7 +60,7 @@ public class ChangePwdActivity extends BaseActivity {
             Toast.makeText(this, "两次新密码输入不一样", Toast.LENGTH_SHORT).show();
             return;
         }
-        
+
 
     }
 }
