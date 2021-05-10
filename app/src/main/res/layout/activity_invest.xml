@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.InvestActivity">
+
+    <com.hjq.bar.TitleBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        app:leftIcon="@mipmap/bar_icon_back_white"
+        app:title="充值缴费"
+        app:titleColor="@color/white" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="余额"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="0元"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+    </RelativeLayout>
+
+    <com.android.gasproject.view.SettingBar
+        android:id="@+id/sb_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:bar_leftText="用戶名" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="充值金额"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_50"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_btn_select"
+                android:button="@null"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="50"
+                android:textColor="@drawable/tv_color_select"
+                android:textSize="25sp" />
+
+
+            <RadioButton
+                android:layout_width="0dp"
+                android:id="@+id/rb_100"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_btn_select"
+                android:button="@null"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="100"
+                android:textColor="@drawable/tv_color_select"
+                android:textSize="25sp" />
+
+            <RadioButton
+                android:id="@+id/rb_150"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_btn_select"
+                android:button="@null"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="150"
+                android:textColor="@drawable/tv_color_select"
+                android:textSize="25sp" />
+        </RadioGroup>
+        <LinearLayout
+            android:layout_margin="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp">
+            <EditText
+                android:id="@+id/et_money"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                android:hint="请输入金额(元)"
+                android:background="@drawable/bg_normal"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+        <Button
+            android:textColor="@color/white"
+            android:text="立即充值"
+            android:layout_margin="30dp"
+            android:id="@+id/btn_invest"
+            android:background="@drawable/bg_btn_round"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+
+</LinearLayout>
