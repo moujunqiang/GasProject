@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    >
+
+
+    <Button
+        android:textColor="@color/white"
+        android:background="@drawable/bg_tv_send"
+        android:id="@+id/btn_admin_movie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:text="配置管理" />
+
+    <Button
+        android:textColor="@color/white"
+        android:background="@drawable/bg_tv_send"
+        android:id="@+id/btn_admin_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:text="用户管理" />
+    <Button
+        android:textColor="@color/white"
+        android:background="@drawable/bg_tv_send"
+        android:id="@+id/btn_admin_notify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:text="通知管理" />
+    <Button
+        android:textColor="@color/white"
+        android:background="@drawable/bg_tv_send"
+        android:id="@+id/btn_admin_install"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:text="报装管理" />
+</LinearLayout>

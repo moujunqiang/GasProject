@@ -7,6 +7,8 @@
     android:orientation="vertical"
     tools:context=".activity.InstallActivity">
     <com.hjq.bar.TitleBar
+        android:id="@+id/tv_title"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorAccent"
@@ -27,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <EditText
-            android:id="@+id/uname"
+            android:id="@+id/et_install_address"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/widget_size_8"
@@ -35,7 +37,7 @@
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:gravity="center_vertical"
-            android:hint="请输入账号/手机号"
+            android:hint="请安装地址"
             android:singleLine="true"
             android:textColor="#333333"
             android:textColorHint="#999999"
@@ -64,7 +66,7 @@
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:gravity="center_vertical"
-            android:hint="请输入账号/手机号"
+            android:hint="请输入联系人"
             android:singleLine="true"
             android:textColor="#333333"
             android:textColorHint="#999999"
@@ -93,7 +95,7 @@
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:gravity="center_vertical"
-            android:hint="请输入账号/手机号"
+            android:hint="请输入手机号"
             android:singleLine="true"
             android:textColor="#333333"
             android:textColorHint="#999999"
@@ -129,6 +131,13 @@
             android:textCursorDrawable="@drawable/login_edittext_cursor"
             android:textSize="@dimen/font_size_18" />
     </LinearLayout>
-
+    <Button
+        android:layout_margin="30dp"
+        android:background="@drawable/bg_btn_round"
+        android:id="@+id/btn_commit"
+        android:textColor="@color/white"
+        android:text="提交"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>

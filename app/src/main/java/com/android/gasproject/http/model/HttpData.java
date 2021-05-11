@@ -9,18 +9,27 @@ public class HttpData<T> {
     /**
      * 接口请求返回状态
      */
-    private int rsp_ret;
+    private boolean success;
+    private String error;
     /**
      * 数据
      */
     private T data;
 
-    public int getRsp_ret() {
-        return rsp_ret;
+    public boolean isSuccess() {
+        return success;
     }
 
-    public void setRsp_ret(int rsp_ret) {
-        this.rsp_ret = rsp_ret;
+    public void setSuccess(boolean success) {
+        this.success = success;
+    }
+
+    public String getError() {
+        return error;
+    }
+
+    public void setError(String error) {
+        this.error = error;
     }
 
     public T getData() {

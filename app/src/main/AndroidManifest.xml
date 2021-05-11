@@ -14,10 +14,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activity.InstallActivity"></activity>
-        <activity android:name=".activity.HistoryActivity" />
+        <activity android:name=".activity.admin.PublishNotify" />
+        <activity android:name=".activity.UserDetailActivity" />
+        <activity android:name=".activity.admin.ConfigActivity" />
+        <activity android:name=".activity.NotifyDetailActivity" />
+        <activity android:name=".activity.admin.AdminActivity" />
+        <activity android:name=".activity.InstallActivity" />
+        <activity android:name=".activity.InvestHistoryActivity" />
         <activity android:name=".activity.InvestActivity" />
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.RegisterActivity" />
+        <activity android:name=".activity.ChangePwdActivity" />
+        <activity android:name=".activity.AboutActivity" />
+        <activity android:name=".activity.PersonalDataActivity" />
+        <activity android:name=".activity.admin.AdminNotifyActivity"/>
+        <activity android:name=".activity.admin.UserAdminActivity"/>
+        <activity android:name=".activity.InstallAdminActivity"/>
+        <activity android:name=".activity.NotifyActivity"/>
+        <activity android:name=".activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

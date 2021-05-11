@@ -3,6 +3,7 @@ package com.android.gasproject.activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
@@ -19,6 +20,13 @@ import androidx.appcompat.app.AlertDialog;
 
 import com.android.gasproject.BaseActivity;
 import com.android.gasproject.R;
+import com.android.gasproject.http.model.HttpData;
+import com.android.gasproject.http.request.LoginAPi;
+import com.android.gasproject.http.request.RegisterAPi;
+import com.android.gasproject.http.response.UserBean;
+import com.android.gasproject.utils.SPUtils;
+import com.hjq.http.EasyHttp;
+import com.hjq.http.listener.OnHttpListener;
 
 
 public class RegisterActivity extends BaseActivity implements View.OnClickListener {
@@ -45,7 +53,6 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
      * 注册
      */
     private TextView mTvRegister;
-    int yourChoice = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +84,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
             }
         });
 
+
     }
 
     @Override
@@ -86,17 +94,36 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                 break;
 
             case R.id.submit:
+                if (TextUtils.isEmpty(mUname.getText().toString())) {
+                    Toast.makeText(this, "请输入用户名", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (TextUtils.isEmpty(mPword.getText().toString())) {
+                    Toast.makeText(this, "请输入密码", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                EasyHttp.post(this)
+                        .api(new RegisterAPi()
+                                .setAccount(mUname.getText().toString())
+                                .setPwd(mPword.getText().toString())
+                        ).request(new OnHttpListener<HttpData<UserBean>>() {
+                    @Override
+                    public void onSucceed(HttpData<UserBean> result) {
+                        Toast.makeText(RegisterActivity.this, "注册成功", Toast.LENGTH_SHORT).show();
+                        finish();
+                    }
 
-
+                    @Override
+                    public void onFail(Exception e) {
+                    }
+                });
 
                 break;
             case R.id.tv_register:
-
+                finish();
                 break;
         }
     }
-
-
 
 
 }

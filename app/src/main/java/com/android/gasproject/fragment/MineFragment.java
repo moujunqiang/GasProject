@@ -2,6 +2,7 @@ package com.android.gasproject.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,11 @@ import androidx.annotation.Nullable;
 
 import com.android.gasproject.BaseFragment;
 import com.android.gasproject.R;
+import com.android.gasproject.activity.AboutActivity;
+import com.android.gasproject.activity.ChangePwdActivity;
+import com.android.gasproject.activity.LoginActivity;
+import com.android.gasproject.http.response.UserBean;
+import com.android.gasproject.utils.SPUtils;
 
 
 /**
@@ -21,7 +27,8 @@ public final class MineFragment extends BaseFragment {
 
 
     private View inflate;
-    private TextView tvName, tvPhone;
+    private TextView tvName;
+    private TextView tvStatus;
 
     public static MineFragment newInstance() {
         return new MineFragment();
@@ -36,27 +43,35 @@ public final class MineFragment extends BaseFragment {
     }
 
     protected void initView() {
-        tvName = inflate.findViewById(R.id.me_tv_name);
-        tvPhone = inflate.findViewById(R.id.me_tv_phone);
-
+        UserBean userBean = SPUtils.getObject("user", UserBean.class, getContext());
+        tvName = inflate.findViewById(R.id.tv_me_name);
+        tvStatus = inflate.findViewById(R.id.tv_status);
+        if (userBean != null) {
+            tvName.setText(TextUtils.isEmpty(userBean.getNickname()) ? userBean.getAccount() : userBean.getNickname());
+            tvStatus.setText(userBean.getGasstatus().equals("1")?"正常":"已断气");
+        }
 
         //  跳转到设置页面
-        inflate.findViewById(R.id.sb_mine_setting).setOnClickListener(new View.OnClickListener() {
+        inflate.findViewById(R.id.rl_me_about).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            }
-        });
-        inflate.findViewById(R.id.sb_person_repair).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
+                startActivity(new Intent(getContext(), AboutActivity.class));
             }
         });
 
-        inflate.findViewById(R.id.sb_person_web).setOnClickListener(new View.OnClickListener() {
+        inflate.findViewById(R.id.rl_me_quit).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SPUtils.put(getContext(), "login", false);
+                startActivity(new Intent(getContext(), LoginActivity.class));
+                getActivity().finish();
+            }
+        });
 
+        inflate.findViewById(R.id.rl_me_change_pwd).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), ChangePwdActivity.class));
             }
         });
     }

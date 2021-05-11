@@ -5,16 +5,10 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".activity.HistoryActivity">
-    <com.hjq.bar.TitleBar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
-        app:leftIcon="@mipmap/bar_icon_back_white"
-        app:title="充值记录"
-        app:titleColor="@color/white" />
+    tools:context=".activity.InvestHistoryActivity">
+
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_history"
+        android:id="@+id/rv_install"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 </LinearLayout>

@@ -36,7 +36,7 @@ import okhttp3.Response;
 import okhttp3.ResponseBody;
 
 /**
- *    desc   : 请求处理类
+ * desc   : 请求处理类
  */
 public final class RequestHandler implements IRequestHandler {
 
@@ -115,7 +115,7 @@ public final class RequestHandler implements IRequestHandler {
 
         if (result instanceof HttpData) {
             HttpData<?> model = (HttpData<?>) result;
-            if (model.getRsp_ret()==0) {
+            if (model.isSuccess()) {
                 // 代表执行成功
                 return result;
             }
@@ -127,7 +127,7 @@ public final class RequestHandler implements IRequestHandler {
     }
 
     @Override
-    public Exception requestFail(LifecycleOwner lifecycle,  Exception e) {
+    public Exception requestFail(LifecycleOwner lifecycle, Exception e) {
         // 判断这个异常是不是自己抛的
         if (e instanceof HttpException) {
 

@@ -8,7 +8,7 @@ import com.hjq.http.model.BodyType;
 /**
  * desc   : 正式环境
  */
-public class ReleaseServer implements IRequestServer, IRequestType {
+public class ReleaseServer implements IRequestServer {
 
     @Override
     public String getHost() {
@@ -20,8 +20,5 @@ public class ReleaseServer implements IRequestServer, IRequestType {
         return "";
     }
 
-    @Override
-    public BodyType getType() {
-        return BodyType.JSON;
-    }
+
 }

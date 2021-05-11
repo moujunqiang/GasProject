@@ -7,6 +7,8 @@ import android.view.View;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.android.gasproject.http.response.UserBean;
+import com.android.gasproject.utils.SPUtils;
 import com.hjq.bar.OnTitleBarListener;
 import com.hjq.bar.TitleBar;
 import com.hjq.http.listener.OnHttpListener;
@@ -18,7 +20,7 @@ import okhttp3.Call;
 /**
  * 基础类 处理一些公共方法
  */
-public class BaseActivity extends AppCompatActivity implements OnHttpListener {
+public class BaseActivity extends AppCompatActivity implements OnHttpListener, OnTitleBarListener {
     private LoadingDialog loadingDialog;
 
     /**
@@ -31,25 +33,11 @@ public class BaseActivity extends AppCompatActivity implements OnHttpListener {
         }
         loadingDialog.loading();
     }
+
     public void bindActivity(final Activity mActivity) {
         TitleBar mTvTitle = (TitleBar) mActivity.findViewById(R.id.tv_title);
         //设置标题栏点击事件
-        mTvTitle.setOnTitleBarListener(new OnTitleBarListener() {
-            @Override
-            public void onLeftClick(View v) {
-                finish();
-            }
-
-            @Override
-            public void onTitleClick(View v) {
-
-            }
-
-            @Override
-            public void onRightClick(View v) {
-
-            }
-        });
+        mTvTitle.setOnTitleBarListener(this);
     }
 
     @Override
@@ -58,13 +46,16 @@ public class BaseActivity extends AppCompatActivity implements OnHttpListener {
 
     }
 
+    public UserBean getUserBean() {
+        UserBean user = SPUtils.getObject("user", UserBean.class, this);
+        return user;
+    }
     /**
      * 隐藏加载框
      */
     public void hideLodingDialog() {
         loadingDialog.cancel();
     }
-
 
 
     @Override
@@ -85,5 +76,20 @@ public class BaseActivity extends AppCompatActivity implements OnHttpListener {
     @Override
     public void onEnd(Call call) {
         hideLodingDialog();
+    }
+
+    @Override
+    public void onLeftClick(View v) {
+        finish();
+    }
+
+    @Override
+    public void onTitleClick(View v) {
+
+    }
+
+    @Override
+    public void onRightClick(View v) {
+
     }
 }
